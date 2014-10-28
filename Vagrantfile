@@ -31,7 +31,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
         railsworkshop.vm.provision :shell, :inline => 'if [[ ! -f /apt-get-run ]]; then apt-get update && sudo touch /apt-get-run; fi'
 
         # Shared folder
-        railsworkshop.vm.provision :shell, :inline => 'sudo -i vagrant mkdir -p /home/vagrant/dev'
+        railsworkshop.vm.provision :shell, :inline => 'sudo -i -u vagrant mkdir -p /home/vagrant/dev'
         railsworkshop.vm.synced_folder ".", "/home/vagrant/dev/", id: "dev", :owner=>"vagrant", :group=>"vagrant"
 
         # Puppet provision
