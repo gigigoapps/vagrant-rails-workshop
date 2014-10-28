@@ -12,12 +12,16 @@ node 'railsworkshop' {
 
     # Packages
     package { [
+            'autoconf',
+            'bison',
             'fabric',
             'git',
+            'htop',
             'postgresql',
             'postgresql-server-dev-all',
             'rbenv',
-            'ruby-build'
+            'ruby-build',
+            'vim'
         ]:
         ensure  => 'installed'
     }
