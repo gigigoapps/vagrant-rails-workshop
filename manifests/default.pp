@@ -12,7 +12,12 @@ node 'railsworkshop' {
 
     # Packages
     package { [
-            'fabric'
+            'fabric',
+            'git',
+            'postgresql',
+            'postgresql-server-dev-all',
+            'rbenv',
+            'ruby-build'
         ]:
         ensure  => 'installed'
     }

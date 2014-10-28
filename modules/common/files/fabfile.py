@@ -37,11 +37,18 @@ This task can only exec once
 def initialdeploy():
     checkdeploystatus()
     if confirm("Vas a realizar el despliegue inicial. Esta tarea sólo se puede ejecutar una vez\n¿Estás seguro?"):
-    	print("Desplegando...")
+        local ('rbenv install 2.0.0-dev')
+        local ('rbenv global 2.0.0-dev')
+        local ('rbenv rehash')
+        local ('curl -sSL https://get.rvm.io | bash -s stable --rails')
+        local ('rvm install 2.1.1')
+        local ('wget -qO- https://toolbelt.heroku.com/install-ubuntu.sh | sh')
+        local ('for a in json pg unicorn sinatra rails devise twitter-bootstrap-rails; do gem install $a; done')
 
-        # Create file
+        # Create deploy lock file
         f = open('deployed','w')
         f.close()
         local('chattr +i deployed')
+
         print yellow('Despliegue inicial realizado')
         print yellow('ESTA TAREA NO SE VA A EJECUTAR DE NUEVO')
