@@ -65,6 +65,10 @@ Or you can also exec `sudo [command]` commands.
 
 ## Notes
 
+The MV starts with the local IP 10.11.12.13. If you publish a service into the machine, you should access with
+
+http://10.11.12.13:3000
+
 ---
 
 ## Known issues
