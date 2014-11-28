@@ -14,18 +14,18 @@ This project uses Vagrant to mount and deploy a workshop environment with Ubuntu
 
 ### Clone this repositoriy with submodules (they are puppet submodules)
 
-    $ git clone --recursive https://github.com/pedroamador/ubuntu1404-railsworkshop
+    $ git clone --recursive https://github.com/pedroamador/ubuntu1404-rails-workshop.git
     [...]
-    $ cd ubuntu1404-railsworkshop
+    $ cd ubuntu1404-rail-sworkshop
     [...]
 
 ### Start the VM
 
-    ubuntu1404-railsworkshop$ vagrant up
-    Bringing machine 'railsworkshop' up with 'virtualbox' provider...
-    ==> railsworkshop: Importing base box 'puppetlabs/ubuntu-14.04-64-puppet'...
-    ==> railsworkshop: Matching MAC address for NAT networking...
-    ==> railsworkshop: Checking if box 'puppetlabs/ubuntu-14.04-64-puppet' is up to date...
+    ubuntu1404-rails-workshop$ vagrant up
+    Bringing machine 'rails-workshop' up with 'virtualbox' provider...
+    ==> rails-workshop: Importing base box 'puppetlabs/ubuntu-14.04-64-puppet'...
+    ==> rails-workshop: Matching MAC address for NAT networking...
+    ==> rails-workshop: Checking if box 'puppetlabs/ubuntu-14.04-64-puppet' is up to date...
     [...]
 
 ### Initial configuration
@@ -33,7 +33,7 @@ This project uses Vagrant to mount and deploy a workshop environment with Ubuntu
 You should enter the following command to complete the VM configuration
 
         
-    ubuntu1404-railsworkshop$ vagrant ssh -c "sudo fab -f /opt/fabric/fabfile.py initialdeploy"
+    ubuntu1404-rails-workshop$ vagrant ssh -c "sudo fab -f /opt/fabric/fabfile.py initialdeploy"
     Vas a realizar el despliegue inicial. Esta tarea sólo se puede ejecutar una vez
     ¿Estás seguro? [Y/n] y
     Desplegando...
@@ -50,7 +50,7 @@ You should enter the following command to complete the VM configuration
 
 You can go to VM "inside" with shell prompt in console mode
 
-    ubuntu1404-railsworkshop$ vagrant ssh
+    ubuntu1404-rails-workshop$ vagrant ssh
     Welcome to Ubuntu 14.04 LTS (GNU/Linux 3.13.0-24-generic x86_64)
 
      * Documentation:  https://help.ubuntu.com/

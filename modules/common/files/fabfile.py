@@ -36,11 +36,10 @@ This task can only exec once
 @task
 def initialdeploy():
     checkdeploystatus()
-    if 1 == 1:
-    #if confirm("Vas a realizar el despliegue inicial. Esta tarea sólo se puede ejecutar una vez\n¿Estás seguro?"):
-        #local ('sudo -i rbenv install 2.0.0-dev')
-        #local ('sudo -i rbenv global 2.0.0-dev')
-        #local ('sudo -i rbenv rehash')
+    if confirm("Vas a realizar el despliegue inicial. Esta tarea sólo se puede ejecutar una vez\n¿Estás seguro?"):
+        local ('sudo -i rbenv install 2.0.0-dev')
+        local ('sudo -i rbenv global 2.0.0-dev')
+        local ('sudo -i rbenv rehash')
         local ('sudo -i curl -sSL https://get.rvm.io | bash -s stable --rails')
         local ('sudo -i rvm install 2.1.1')
         local ('sudo -i rvm use 2.1.1 --default')
