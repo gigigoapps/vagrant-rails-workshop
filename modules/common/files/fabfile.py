@@ -45,6 +45,8 @@ def initialdeploy():
         local ('sudo -i rvm use 2.1.1 --default')
         local ('wget -qO- https://toolbelt.heroku.com/install-ubuntu.sh | sudo -i sh')
         local ('for a in json pg unicorn sinatra rails devise twitter-bootstrap-rails; do sudo -i gem install $a; done')
+        local ('sudo -u postgres createuser --superuser vagrant')
+        local ('sudo -u postgres createdb vagrant')
 
         # Create deploy lock file
         f = open('deployed','w')
