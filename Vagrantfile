@@ -13,7 +13,6 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
     # VM config
     config.vm.define :railsworkshop do |railsworkshop|
         railsworkshop.vm.network :private_network, ip: "10.11.12.13"
-        railsworkshop.vm.network :forwarded_port, host: 27017, guest: 27017
 
         railsworkshop.vm.hostname = "railsworkshop"
 
